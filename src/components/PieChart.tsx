@@ -71,6 +71,11 @@ const totalValue = getTotal();
         <Legend
           verticalAlign="bottom"
           align="center"
+          wrapperStyle={{
+            fontSize: window.innerWidth > 600 ? "0.75rem" :"0.5rem" , // Tailwind's text-xs equivalent
+            // '@media (min-width: 640px)': { fontSize: '0.875rem' }, // Tailwind's text-sm
+            // '@media (min-width: 768px)': { fontSize: '1rem' }, // Tailwind's text-base
+          }}
           formatter={(value, entry) => {
             const percentage = ((entry?.payload?.value / totalValue) * 100).toFixed(1);
             return `${value} (${percentage}%)`;
