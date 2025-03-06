@@ -32,9 +32,11 @@ const CustomeBarChart: React.FC<{ data: { name: string; scaledValue: number; val
     angle: -90, 
     position: "insideLeft", 
     dy: 0, 
-    dx: 0, 
+    dx: 0,
+    
     style: { textAnchor: "middle", fontSize: 12 } 
   }} 
+  width={40}
   tick={{ fontSize: 10 }} 
 />
 

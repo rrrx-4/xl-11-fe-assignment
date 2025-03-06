@@ -23,7 +23,7 @@ const CustomAreaChart: React.FC<{ data: { name: string; value: number }[] }> = (
         >
           <CartesianGrid strokeDasharray="0 0" strokeOpacity={0.1} />
           <XAxis dataKey="name" tick={{ fontSize: 12 }} />
-          <YAxis label={{ 
+          <YAxis width={40} label={{ 
     value: "Amount", 
     angle: -90, 
     position: "insideLeft", 
