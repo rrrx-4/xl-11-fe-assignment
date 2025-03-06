@@ -28,9 +28,9 @@ const CustomAreaChart: React.FC<{ data: { name: string; value: number }[] }> = (
     angle: -90, 
     position: "insideLeft", 
     dy: 0, 
-    dx: 0, 
-    style: { textAnchor: "middle", fontSize: 12 } 
-  }}  tick={{ fontSize: 12 }} />
+    dx: -5, 
+    style: { textAnchor: "middle", fontSize: 10 } 
+  }}  tick={{ fontSize: 10 }} />
 
 
           <Tooltip content={<CustomTooltip />} />
