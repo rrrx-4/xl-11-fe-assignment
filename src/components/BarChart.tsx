@@ -1,20 +1,12 @@
 import React from "react";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Cell } from "recharts";
+import CustomTooltip from "./Tooltip";
 
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#A28EFF", "#FF6699", "#FF3366"];
 
 
-const CustomTooltip: React.FC<{ active?: boolean; payload?: any[] }> = ({ active, payload }) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="bg-white p-3 rounded-lg shadow-md border border-gray-200 dark:bg-gray-900 dark:text-white">
-        <p className="text-sm font-semibold">{payload[0].payload.name}: <span className="font-bold">{payload[0].value}</span></p>
-      </div>
-    );
-  }
-  return null;
-};
+
 
 const CustomeBarChart: React.FC<{ data: { name: string; scaledValue: number; value: number }[] }> = ({ data }) => {
   return (
@@ -50,7 +42,9 @@ const CustomeBarChart: React.FC<{ data: { name: string; scaledValue: number; val
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Bar>
-            <Legend verticalAlign="bottom" align="center" />
+            <Legend  wrapperStyle={{
+            fontSize: window.innerWidth > 600 ? "0.75rem" :"0.5rem" , 
+          }} verticalAlign="bottom" align="center" />
         </BarChart>
       </ResponsiveContainer>
     </div>

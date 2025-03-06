@@ -1,17 +1,8 @@
 import React from "react";
 import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import CustomTooltip from "./Tooltip";
 
 
-const CustomTooltip: React.FC<{ active?: boolean; payload?: any[] }> = ({ active, payload }) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="bg-white dark:bg-gray-900 dark:text-white p-3 rounded-lg shadow-md border border-gray-200">
-        <p className="text-sm font-semibold">{payload[0].payload.name}: <span className="font-bold">{payload[0].value}</span></p>
-      </div>
-    );
-  }
-  return null;
-};
 
 const CustomAreaChart: React.FC<{ data: { name: string; value: number }[] }> = ({ data }) => {
   return (
@@ -36,7 +27,8 @@ const CustomAreaChart: React.FC<{ data: { name: string; value: number }[] }> = (
           <Tooltip content={<CustomTooltip />} />
 
 
-          <Legend verticalAlign="bottom" align="center" />
+          <Legend  wrapperStyle={{
+            fontSize: window.innerWidth > 600 ? "0.75rem" :"0.5rem" ,}} verticalAlign="bottom" align="center" />
 
 
           <defs>
