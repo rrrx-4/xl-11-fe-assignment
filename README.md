@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
+# Project Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation
+To set up the project, follow these steps:
 
-Currently, two official plugins are available:
+1. Clone the repository:
+   ```sh
+   git clone <clone url>
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
+4. Create a `.env.local` file and store the `BASE_URL`:
+   ```
+   BASE_URL=<your_base_url>
+   ```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Features Completed
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Toggle Cards and Analytics Component**: Added toggling functionality for cards and analytics component.
+- **Rate Limiting**: Implemented rate limiting to control API requests.
+- **Dark Mode**: Integrated dark mode support.
+- **Transition Animations**: Smooth animations when toggling UI components.
+- **Error Handling**: Added robust error handling for better user experience.
+- **Responsive Design**: Ensured compatibility across all devices.
+- **Performance Optimization**: Used `useCallback` and `useMemo` to optimize re-renders.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Bar Chart Scaling
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- The dataset contains properties with large differences in values (e.g., one property has `25,000` while others are below `1,000`).
+- Implemented a **scaling factor method** to ensure all values are visible in bar charts.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## Libraries Used
+
+- **Styling**: Tailwind CSS
+- **Data Fetching & State Management**:
+  - TanStack Query (React Query)
+  - Axios
+  - Axios Rate Limiting
+- **Charts**: Recharts
+
+---
+
+## React Hooks Used
+
+- `useState`
+- `useCallback`
+- `useContext`
+

@@ -11,14 +11,14 @@ const Cards = ({stats}: any) => {
     {
       stats?.data && Object.keys(stats?.data).filter((k)=>k !== 'withdrawData').map((property)=>{
 
-        return <Card label={labels[property] || property} value={stats.data[property]}  />
+        return <Card key={property} label={labels[property] || property} value={stats.data[property]}  />
 
       })
     }
     {
       stats?.data && stats.data.withdrawData.map((wd : {_id:string, totalAmount: number, tdsAmount : number, count : number})=>{
 
-        return <AdvCard value={`${wd.totalAmount} | ${wd.tdsAmount} | ${wd.count} `}  label={`Withdraw ${wd._id.toLowerCase()} `} />
+        return <AdvCard key={wd._id} value={`${wd.totalAmount} | ${wd.tdsAmount} | ${wd.count} `}  label={`Withdraw ${wd._id.toLowerCase()} `} />
 
       })
     }

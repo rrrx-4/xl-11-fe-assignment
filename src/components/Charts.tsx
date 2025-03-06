@@ -41,10 +41,10 @@ const Charts = ({stats} : any) => {
         console.log("ssss",  data);
   
         const maxValue = Math.max(...data.map(d => d.value));
-  const scalingFactor = maxValue / 100; // Adjust to fit chart size
+  const scalingFactor = maxValue / 100; 
   const normalizedData = data.map(d => ({
     ...d,
-    scaledValue: Math.max(d.value / scalingFactor, 5) // Ensure a minimum visible bar height
+    scaledValue: Math.max(d.value / scalingFactor, 5) 
   }));
         
         
